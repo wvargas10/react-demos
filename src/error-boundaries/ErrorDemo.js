@@ -1,8 +1,10 @@
 import React from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import CounterWithProblems from './CounterWithProblems';
+import ShowError from './ShowError';
 
 const ErrorDemo = () => {
+  const errorComponent = <ShowError />;
   return (
     <div>
       <h2>Error Boundaries</h2>
@@ -12,7 +14,8 @@ const ErrorDemo = () => {
         <code>getDerivedStateFromError</code> and <code>componentDidCatch</code>
         .
       </p>
-      <ErrorBoundary>
+      <ErrorBoundary errorComponent={errorComponent}>
+      {/* <ErrorBoundary> */}
         <CounterWithProblems />
       </ErrorBoundary>
     </div>

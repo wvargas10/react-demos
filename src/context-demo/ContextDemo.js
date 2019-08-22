@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 const DemoContext = React.createContext({
   message: '',
@@ -15,7 +15,7 @@ export default class ContextDemo extends React.Component {
 
     this.state = {
       message: 'Initial message',
-      sendMessage
+      sendMessage,
     };
   }
 
@@ -57,7 +57,10 @@ function LeftTwo() {
   return (
     <div>
       <h4>LeftTwo</h4>
-      <LeftThree />
+      {/* Toggle these */}
+      {/* <LeftThree /> */}
+      {/* <LeftThreeHook /> */}
+      <LeftThreeClass />
     </div>
   );
 }
@@ -69,7 +72,10 @@ function LeftThree() {
       <DemoContext.Consumer>
         {({ message, sendMessage }) => {
           return (
-            <button className="btn btn-primary" onClick={() => sendMessage('updated value')}>
+            <button
+              className="btn btn-primary"
+              onClick={() => sendMessage('updated value')}
+            >
               Change value
             </button>
           );
@@ -78,6 +84,40 @@ function LeftThree() {
     </div>
   );
 }
+
+function LeftThreeHook() {
+  const { sendMessage } = useContext(DemoContext);
+  return (
+    <div>
+      <h5>LeftThree</h5>
+      <button
+        className="btn btn-primary"
+        onClick={() => sendMessage('updated value')}
+      >
+        Change value
+      </button>
+    </div>
+  );
+}
+
+class LeftThreeClass extends React.Component {
+  render() {
+    const { sendMessage } = this.context;
+    return (
+      <div>
+        <h5>LeftThree</h5>
+        <button
+          className="btn btn-primary"
+          onClick={() => sendMessage('updated value')}
+        >
+          Change value
+        </button>
+      </div>
+    );
+  }
+}
+
+LeftThreeClass.contextType = DemoContext;
 
 function Right() {
   return (
@@ -112,7 +152,7 @@ function RightThree() {
       <h5>RightThree</h5>
       <DemoContext.Consumer>
         {/* {({ message }) => <span>Current message: {message}</span>} */}
-        {(contextObject) => <span>Current message: {contextObject.message}</span>}
+        {contextObject => <span>Current message: {contextObject.message}</span>}
       </DemoContext.Consumer>
     </div>
   );
