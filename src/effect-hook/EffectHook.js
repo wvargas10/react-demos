@@ -6,10 +6,12 @@ export default function EffectHook() {
   const [oneTimeEffect, setOneTimeEffect] = useState(Date.now());
   const [dataChangeEffect, setDataChangeEffect] = useState(Date.now());
 
+  // Use a ref to store an arbitrarty value
   const everyRenderRef = useRef(Date.now());
 
   useEffect(() => {
     console.log('Effect: runs every render');
+    // Don't update state, because that would provoke an infinite loop
     everyRenderRef.current = Date.now();
   });
 
