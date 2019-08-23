@@ -16,6 +16,7 @@ export default class ErrorBoundary extends Component {
   }
 
   render() {
+    console.log('Error level: ' + this.props.level || 'none');
     if (this.state.hasError) {
       return this.props.errorComponent ? (
         this.props.errorComponent

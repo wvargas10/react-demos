@@ -5,6 +5,7 @@ import CancelPromise from './cancel-promise/CancelPromise';
 import EffectHook from './effect-hook/EffectHook';
 import ContextDemo from './context-demo/ContextDemo';
 import HigherOrderComponent from './higher-order-component/HigherOrderComponent';
+import Memoization from './memo-demo/Memoization';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
               <li className="list-unstyled-item">
                 <Link to="higher-order-component">Higher Order Component</Link>
               </li>
+              <li className="list-unstyled-item">
+                <Link to="memoization">Memoization</Link>
+              </li>
             </ul>
           </div>
           <div className="col">
@@ -45,6 +49,7 @@ function App() {
               path="/higher-order-component"
               component={HigherOrderComponent}
             />
+            <Route path="/memoization" component={Memoization} />
           </div>
         </div>
       </main>
