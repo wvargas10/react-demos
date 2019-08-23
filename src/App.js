@@ -4,6 +4,7 @@ import ErrorDemo from './error-boundaries/ErrorDemo';
 import CancelPromise from './cancel-promise/CancelPromise';
 import EffectHook from './effect-hook/EffectHook';
 import ContextDemo from './context-demo/ContextDemo';
+import HigherOrderComponent from './higher-order-component/HigherOrderComponent';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
               <li className="list-unstyled-item">
                 <Link to="context-demo">Context API</Link>
               </li>
+              <li className="list-unstyled-item">
+                <Link to="higher-order-component">Higher Order Component</Link>
+              </li>
             </ul>
           </div>
           <div className="col">
@@ -37,6 +41,10 @@ function App() {
             <Route path="/cancel-promise" component={CancelPromise} />
             <Route path="/effect-hook" component={EffectHook} />
             <Route path="/context-demo" component={ContextDemo} />
+            <Route
+              path="/higher-order-component"
+              component={HigherOrderComponent}
+            />
           </div>
         </div>
       </main>
