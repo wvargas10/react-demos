@@ -6,6 +6,9 @@ import EffectHook from './effect-hook/EffectHook';
 import ContextDemo from './context-demo/ContextDemo';
 import HigherOrderComponent from './higher-order-component/HigherOrderComponent';
 import Memoization from './memo-demo/Memoization';
+import DynamicComponents from './dynamic-components/DynamicComponents';
+import ReduxCounter from './redux-counter/ReduxCounter';
+import ReduxCounterBP from './redux-counter-best/ReduxContainer';
 
 function App() {
   return (
@@ -38,6 +41,17 @@ function App() {
               <li className="list-unstyled-item">
                 <Link to="memoization">Memoization</Link>
               </li>
+              <li className="list-unstyled-item">
+                <Link to="dynamic-components">DynamicComponents</Link>
+              </li>
+              <li className="list-unstyled-item">
+                <Link to="redux-counter">Redux Counter</Link>
+              </li>
+              <li className="list-unstyled-item">
+                <Link to="redux-counter-best-practices">
+                  Redux Counter (best practices)
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col">
@@ -50,6 +64,12 @@ function App() {
               component={HigherOrderComponent}
             />
             <Route path="/memoization" component={Memoization} />
+            <Route path="/dynamic-components" component={DynamicComponents} />
+            <Route path="/redux-counter" component={ReduxCounter} />
+            <Route
+              path="/redux-counter-best-practices"
+              component={ReduxCounterBP}
+            />
           </div>
         </div>
       </main>

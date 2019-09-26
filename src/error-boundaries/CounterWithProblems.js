@@ -7,7 +7,7 @@ const CounterWithProblems = () => {
   // errors during rendering. Use try-catch for an error handler in an event handler.
   return (
     <div>
-      <p>This counter has problems. Every even number, it throws an error.</p>
+      <p>This counter has problems. Every time it reaches an even number, it throws an error.</p>
       <BadCounter count={count} />
       <button className="btn btn-primary" onClick={() => setCount(count + 1)}>
         Click Me

@@ -65,6 +65,7 @@ function LeftTwo() {
   );
 }
 
+// eslint-disable-next-line
 function LeftThree() {
   return (
     <div>
@@ -85,6 +86,7 @@ function LeftThree() {
   );
 }
 
+// eslint-disable-next-line
 function LeftThreeHook() {
   const { sendMessage } = useContext(DemoContext);
   return (
